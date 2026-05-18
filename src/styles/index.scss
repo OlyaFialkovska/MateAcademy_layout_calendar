@@ -36,31 +36,31 @@ body {
   flex-wrap: wrap;
   width: $calendar-width;
   padding-inline: $calendar-padding;
-}
 
-.calendar__day {
-  box-sizing: border-box;
-  background-color: $grey;
+  &__day {
+    box-sizing: border-box;
+    background-color: $grey;
 
-  width: $size-box;
-  height: $size-box;
+    width: $size-box;
+    height: $size-box;
 
-  border: 1px solid black;
+    border: 1px solid black;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  &::before {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
-  }
+    &::before {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 30px;
+    }
 
-  &:hover {
-    cursor: pointer;
-    background-color: $hover-cell-color;
-    transform: translate(0, -20px);
-    animation: 0.5s;
+    &:hover {
+      cursor: pointer;
+      background-color: $hover-cell-color;
+      transform: translate(0, -20px);
+      animation: 0.5s;
+    }
   }
 }
 
