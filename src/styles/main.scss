@@ -16,7 +16,6 @@ $start-day: (
   sat: 5,
   sun: 6,
 );
-$month-length: (28, 29, 30, 31);
 
 body {
   margin: 0;
@@ -35,10 +34,11 @@ body {
   gap: $gap-size;
   flex-wrap: wrap;
   width: $calendar-width;
-  padding-inline: $calendar-padding;
+  padding: $calendar-padding;
 
   &__day {
     box-sizing: border-box;
+
     background-color: $grey;
 
     width: $size-box;
@@ -50,6 +50,10 @@ body {
     justify-content: center;
     align-items: center;
 
+    transition:
+      background-color 0.5s,
+      transform 0.5s;
+
     &::before {
       font-family: Arial, Helvetica, sans-serif;
       font-size: 30px;
@@ -58,8 +62,7 @@ body {
     &:hover {
       cursor: pointer;
       background-color: $hover-cell-color;
-      transform: translate(0, -20px);
-      animation: 0.5s;
+      transform: translateY(-20px);
     }
   }
 }
@@ -72,7 +75,7 @@ body {
 
 @each $day, $num in $start-day {
   .calendar--start-day-#{$day} .calendar__day:first-child {
-    margin-left: calc($num * ($size-box + $gap-size));
+    margin-left: $num * ($size-box + $gap-size);
   }
 }
 
